@@ -4,9 +4,7 @@ buildscript {
         jcenter()
     }
 
-    dependencies {
-        classpath 'me.tatarka:gradle-retrolambda:3.0.1'
-    }
+    dependencies {}
 }
 
 apply plugin: 'com.android.application'
@@ -21,7 +19,7 @@ repositories {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.matie.redgram"
@@ -47,6 +45,11 @@ android {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -72,7 +75,6 @@ dependencies {
 
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.4.1'
     compile 'com.jakewharton:butterknife:6.0.0'
-    compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
     compile 'com.sothree.slidinguppanel:library:3.2.0'
     compile 'com.google.dagger:dagger:2.0.1'
     compile 'com.r0adkll:slidableactivity:2.0.4'
